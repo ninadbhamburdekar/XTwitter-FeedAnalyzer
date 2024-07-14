@@ -1,0 +1,51 @@
+elasticconfig:
+  userindex: xcollect_users
+  dataindex: xcollect_data
+  opsindex: xcollect_ops
+
+pollconfig:
+  lockbit1:
+    topic: TOPIC__lockbit01
+    search: "lockbit"
+    collectcap: 1000
+    lookback_h: 150
+
+  midnightblizzard:
+    topic: TOPIC__apt29
+    search: "midnight blizzard OR apt29"
+    collectcap: 1000
+    lookback_h: 150
+
+  DarkWebInformer:
+    topic: USER__DarkWebInformer1
+    search: "(from:DarkWebInformer)"
+    collectcap: 1000
+    lookback_h: 150
+
+  FalconFeeds:
+    topic: USER__FalconFeedsio
+    search: "(from:FalconFeedsio)"
+    collectcap: 5000
+    lookback_h: 150
+
+  BlackSuit:
+    topic: TOPIC__BlackSuit
+    search: "Black Suit ransomware"
+    collectcap: 1000
+    lookback_h: 150
+
+  ZeroDayVulns:
+    topic: TOPIC__ZeroDayVulns
+    search: "(zero-day vulnerability \"CVE\") OR (\"CVSS 9\" OR \"CVSS 8\")"
+    collectcap: 1000
+    lookback_h: 150
+
+
+
+
+
+
+
+
+
+
