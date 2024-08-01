@@ -218,7 +218,11 @@ def pull_tweets(config, esclient):
                      'stage': "COMPLETED_E",
                      'message': ("Exception: %s"%str(e))
                      }
+        resp = esclient.index(index=OPSINDEX, id="latest_query_" + config['topic'] + "_error", document=query_doc)
         resp = esclient.index(index=OPSINDEX, id="latest_query_" + config['topic'], document=query_doc)
+        if 'since_id' in str(e) and 'that is larger than' in str(e):
+            print("OPSINDEX contains last poll date older than seven days. Deleting old ops entry")
+            resp = esclient.delete(index=OPSINDEX, id="latest_query_" + config['topic'])
 
         print(e)
     try:
